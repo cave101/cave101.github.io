@@ -1,55 +1,71 @@
-# app.py
+SOMTOCHUKWU D. ORIZU
+ orizus@coventry.ac.uk • +447375771733 • https://www.linkedin.com/in/somtochukwu-orizu-543528224/
 
-from flask import Flask, render_template, request, redirect
-import mysql.connector
+EDUCATION 
+AWS Academy 
+Covered all the subjects relevant for the certificates below.
+•	AWS Certified Cloud Practitioner
+•	AWS Certified Solutions Architect (Associate)
+•	AWS Certified Solutions Architect (Professional)
+•	Official AWS Fundamentals in DevOps
 
-app = Flask(__name__)
+Bachelor of Science in Cyber Security		       	                                         Jan. 2021 – Present
+Coventry University Scarborough							            
+•	Relevant Courses: Problem solving and programming (Python, C++), Information security, Networking, Operating system, Computer Forensics, Cryptography.
 
-# Connect to MySQL
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="task_manager"
-)
+Online course for CompTIA security+                                                                             Dec. 2021- Present 
+Udemy
+•	Covered all the relevant topics for taking the security+ exam.
 
-# Create tasks table if it doesn't exist
-cursor = db.cursor()
-cursor.execute("""
-    CREATE TABLE IF NOT EXISTS tasks (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        date DATE NOT NULL,
-        completed BOOLEAN DEFAULT FALSE
-    )
-""")
-cursor.close()
+Skills
+Technical Cyber Security Skills
+•	Python programming language and Penetration testing using Kali Linux and Metasploit  
+•	Configuring routers, switches, and PCs
 
-@app.route('/')
-def index():
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM tasks")
-    tasks = cursor.fetchall()
-    cursor.close()
-    return render_template('index.html', tasks=tasks)
+Practical Skills
+•	Experienced user of Microsoft Office, including Word documents, Excel spreadsheets, Access database creation, PowerPoint presentations,
+•	‘Hackthebox’ experience in performing penetration testing.
+•	Cisco packet tracer experience in practicing the configuration of a network. 
 
-@app.route('/add', methods=['POST'])
-def add():
-    name = request.form['name']
-    date = request.form['date']
-    cursor = db.cursor()
-    cursor.execute("INSERT INTO tasks (name, date) VALUES (%s, %s)", (name, date))
-    db.commit()
-    cursor.close()
-    return redirect('/')
 
-@app.route('/complete/<int:task_id>')
-def complete(task_id):
-    cursor = db.cursor()
-    cursor.execute("UPDATE tasks SET completed = TRUE WHERE id = %s", (task_id,))
-    db.commit()
-    cursor.close()
-    return redirect('/')
+WORK EXPERIENCE            
+Student Ambassador		                                                            	    		     Oct. 2021 – Present
+Coventry University							                         Scarborough, England
+•	Improved interpersonal and communication skills through frequent management of events held at the university.
+•	Facilitated school events and student’s participation at events.
+•	Conducted tours of the school for prospective students, their parents, and various visitors
+•	Fostered better interaction between school officials and students through frequent discussions on student activities which created unity.
 
-if __name__ == '__main__':
-    app.run(debug=True)
+VOLUNTEER EXPERIENCE
+Student event planer volunteer						       January. 2021 – Dec. 2017
+CU Scarborough 									            	
+•	Planned events such as graduation for the graduating set.
+•	Also planned events to welcome new students into the campus.
+
+References
+Mr. Innocent Uzuh	
+Math and Engineering Mathematics                                          
+The Kings’ Academy Coulby Newham Middlesbrough		      
+iuzuh@thekingsacademy.org.uk
+07412285752
+
+Mr. Musa Muhammed
+Course leader – Cyber security and Engineering
+Coventry university Scarborough
+ad4780@coventry.ac.uk
+			
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
